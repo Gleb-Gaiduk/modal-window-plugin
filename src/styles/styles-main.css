@@ -1,0 +1,206 @@
+@import "veriables.css";
+@import "_modal.css";
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.page {
+    min-height: 100%;
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 16px;
+}
+
+.page__container {
+    min-height: 100%;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 70px 20px;
+}
+
+.listing {
+}
+
+.listing__header {
+    margin-bottom: 35px;
+}
+
+.listing__title {
+    color: var(--title-color);
+    font-size: 28px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.card__title-link {
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+}
+
+.card__title-link:hover,
+.card__title-link:active,
+.card__title-link:focus {
+    transition: var(--general-transition-time);
+    color: var(--link-hover-color);
+}
+
+.listing__subtitle {
+    color: var(--subtitle-color);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.listing__cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px 30px;
+    overflow-x: hidden;
+}
+
+.listing__card {
+    display: flex;
+    flex-direction: column;
+    width: var(--listing-card-width);
+}
+
+.card__header {
+    display: block;
+    height: var(--listing-image-height);
+    outline: none;
+}
+
+.card__header-image {
+    width: 100%;
+    height: 100%;
+}
+
+.card__body {
+    flex: 1 1 auto;
+    padding-top: 30px;
+}
+
+.card__body-tag {
+    margin-bottom: 16px;
+}
+
+.card__tag-link {
+    text-decoration: none;
+    background: var(--tag-background-color);
+    line-height: 24px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+    padding: 0 11px;
+    border-radius: 3px;
+    height: 24px;
+    outline: none;
+}
+
+.card__body-info {
+    margin-bottom: 20px;
+}
+
+.card__origin-info {
+    color: var(--origin-by-color);
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.card__origin-date {
+    border-left: 1px solid #888;
+    border-right: 1px solid #888;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #888888;
+    margin-right: 15px;
+}
+
+.card__price {
+    color: var(--origin-by-color);
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.card__title {
+    font-size: 20px;
+}
+
+.card__text {
+    color: var(--card-text-color);
+    line-height: 25px;
+    margin-top: 0;
+    margin-bottom: 28px;
+}
+
+.card__footer {
+}
+
+.card__button {
+    cursor: pointer;
+    border: 2px solid #e5e5e5;
+    line-height: 45px;
+    padding: 0 30px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: var(--button-color);
+    background-color: transparent;
+    font-size: 14px;
+    outline: none;
+}
+
+.card__button-icon {
+    height: 10px;
+    margin-left: 5px;
+    vertical-align: center;
+}
+
+.card__button:hover,
+.card__button:active,
+.card__button:focus {
+    transition: var(--general-transition-time);
+    border-color: var(--button-hover-color);
+    color: var(--button-hover-color);
+}
+
+.card__button:hover .card__button-icon g,
+.card__button:active .card__button-icon g,
+.card__button:focus .card__button-icon g {
+    fill: var(--button-hover-color);
+}
+
+@media screen and (max-width: 1395px) {
+    .listing__cards-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .listing__card {
+        width: var(--listing-card-width-tablet);
+    }
+}
+
+@media screen and (max-width: 752px) {
+    .listing__cards-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .listing__card {
+        width: 100%;
+    }
+}

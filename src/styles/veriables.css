@@ -1,0 +1,19 @@
+:root {
+    /* General styles. */
+    --content-max-width: 1380px;
+    --title-color: #1a1a1a;
+    --subtitle-color: #444444;
+    --listing-card-width: 440px;
+    --listing-card-width-tablet: 340px;
+    --listing-image-height: 275px;
+    --tag-background-color: #ba933e;
+    --origin-by-color: #1a1a1a;
+    --link-hover-color: #ba933e;
+    --card-text-color: #444444;
+    --button-hover-color: #ba933e;
+    --button-color: #1a1a1a;
+    --general-transition-time: 0.3s;
+
+    /* Modal window styles. */
+    --overlay-background-color: ;
+}
