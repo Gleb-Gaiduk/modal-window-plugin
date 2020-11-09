@@ -75,7 +75,7 @@ function _createModal(options) {
     const footer = _createModalFooter(options.footerButtons, options);
     modalInstance.querySelector('.modal__container').append(footer);
 
-    document.body.prepand(modalInstance);
+    document.body.prepend(modalInstance);
     return modalInstance;
 };
 
