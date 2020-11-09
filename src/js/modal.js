@@ -15,9 +15,16 @@ library.modal = function (options) {
             setTimeout(() => {
                 _modal.classList.remove('hide');
                 closing = false;
+                if (typeof options.onClose === 'function') {
+                    options.onClose();
+                }
             }, closingTime);
         },
-    }
+
+        setContent(text) {
+            _modal.querySelector('.modal__text').textContent = text;
+        }
+    };
 
     const closeHandler = (event) => {
         if (event.target.dataset.close) {
@@ -33,7 +40,7 @@ library.modal = function (options) {
             _modal.removeEventListener('click', closeHandler);
         }
     })
-}
+};
 
 function _createModal(options) {
     const modalInstance = document.createElement('div');
@@ -47,7 +54,6 @@ function _createModal(options) {
                         <div class="modal__body">
                             <h3 class="modal__title">${options.title || 'Customize your title'}</h3>
                             <p class="modal__text">
-                            ${options.content || ''}
                             </p>
                             <div class="modal__rates-wrapper">
                                 <div class="modal__rates-interaction">
@@ -84,7 +90,7 @@ function _createModalFooter(buttons = [], options) {
     const footerTitle = document.createElement('h3');
     footerTitle.textContent = options.footerTitle;
     footerTitle.classList.add('modal__call-to-action');
-    footer.prepend(footerTitle)
+    footer.prepend(footerTitle);
 
     buttons.forEach(btn => {
         const _button = document.createElement('button');
@@ -98,5 +104,5 @@ function _createModalFooter(buttons = [], options) {
 }
 
 function testButton() {
-
-}
+    alert('Any test function');
+};
